@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Connect redux
+import ContainerCounter from '../../Containers/CounterContainer';
+
 class CounterComponent extends React.Component {
   render () {
     return (
@@ -30,4 +33,5 @@ const btnStyles = {
   background: 'black',
 }
 
-export default CounterComponent;
+export default ContainerCounter(CounterComponent);
+// export default CounterComponent;

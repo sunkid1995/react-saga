@@ -15,7 +15,7 @@ function counterReducer (total = 0, action) {
     return --total;
 
     default:
-      break;
+      return total;
   }
 }
 

@@ -1,16 +1,13 @@
 // Connect redux with components
 import { connect } from 'react-redux';
 
-// Component
-import CounterComponent from '../Components/CounterComponent';
-
 // Redux actions
 import { counter } from '../Redux/actions';
 
 function mapStateToProps(state) {
-  console.log('state', state);
   return {
-    total: state.counter.total ? state.counter.total : 0,
+    // total: state.counter.total ? state.counter.total : 0,
+    total: state.counterReducer ? state.counter.total : 0,
   }
 }
 
@@ -22,6 +19,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 // Connect
-const CounterContainer = connect(mapStateToProps, mapDispatchToProps)(CounterComponent);
-
-export default CounterContainer;
+export default function CounterContainer(HOC) {
+ return connect(mapStateToProps, mapDispatchToProps)(HOC);
+}
