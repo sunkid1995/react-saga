@@ -1,8 +1,7 @@
 import { createStore, combineReducers } from 'redux';
 
 // Reducers
-// import { counterReducer } from '../reducers'
-import counterReducer from '../reducers/counterReducer';
+import { counterReducer } from '../reducers'
 
 // CombineReducers
 const allReducer = combineReducers({
