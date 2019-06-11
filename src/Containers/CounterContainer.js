@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 // Component
 import CounterComponent from '../Components/CounterComponent';
 
+// Redux actions
+import { counter } from '../Redux/actions';
+
 function mapStateToProps(state) {
   return {
 
@@ -12,7 +15,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
  return {
-
+    onDecement: step => dispatch(counter.onDecement(step)),
+    onIncement: step => dispatch(counter.onIncement(step))
   }
 }
 
