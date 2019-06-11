@@ -8,8 +8,9 @@ import CounterComponent from '../Components/CounterComponent';
 import { counter } from '../Redux/actions';
 
 function mapStateToProps(state) {
+  console.log('state', state);
   return {
-
+    total: state.counter.total ? state.counter.total : 0,
   }
 }
 
