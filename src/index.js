@@ -5,17 +5,27 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 // Store
-import store from './Redux/store';
+import configureStore from './Redux/store';
 
 // Provider
 import { Provider } from 'react-redux';
 
-const RenderApp = () => (
+// Root saga
+import rootSaga from './Redux/sagas';
+
+const RenderApp = () => {
+  const store = configureStore();
+
+  // Runner saga
+  store.runSaga(rootSaga);
+
   // Connect Redux store
-  <Provider store={store}>
-    <App />
-  </Provider>
-)
+  return (
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
+}
 
 ReactDOM.render(<RenderApp />, document.getElementById('root'));
 serviceWorker.unregister();
