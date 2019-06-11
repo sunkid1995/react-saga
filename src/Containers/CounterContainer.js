@@ -5,9 +5,10 @@ import { connect } from 'react-redux';
 import { counter } from '../Redux/actions';
 
 function mapStateToProps(state) {
+  const { total } = state.counterReducer;
+
   return {
-    // total: state.counter.total ? state.counter.total : 0,
-    total: state.counterReducer ? state.counter.total : 0,
+    total,
   }
 }
 

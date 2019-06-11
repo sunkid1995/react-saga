@@ -5,18 +5,21 @@ import ContainerCounter from '../../Containers/CounterContainer';
 
 class CounterComponent extends React.Component {
   render () {
+    const { total, onDecement, onIncement } = this.props;
+
     return (
       <React.Fragment>
         <h3>{'Demo counter'}</h3>
         <button
           style={btnStyles}
+          onClick={() => onDecement(parseInt(total) + 1)}
         >
           {'+ Decrement'}
         </button>
-
-          <span>1</span>
+          <span>{total}</span>
         <button
          style={btnStyles}
+         onClick={() => onIncement(parseInt(total) - 1)}
         >
           {'- Increment'}
         </button>
@@ -34,4 +37,3 @@ const btnStyles = {
 }
 
 export default ContainerCounter(CounterComponent);
-// export default CounterComponent;
