@@ -1,19 +1,23 @@
 // Connect redux with components
 import { connect } from 'react-redux';
 
-function mapStateToProps(state) {
-  return {
+// Redux actions
+import { movies } from '../Redux/actions';
 
+function mapStateToProps(state) {
+  const { movies, error } = state.moviesReducer;
+
+  return {
+    movies, error
   }
 }
 
-function mapDispatchToProps(props) {
+function mapDispatchToProps(dispatch) {
   return {
-
+    getMovies: params => dispatch(movies.getMovies(params)),
   }
 }
 
 export default function MoviesContainer(HOC) {
   return connect(mapStateToProps, mapDispatchToProps)(HOC);
 }
-

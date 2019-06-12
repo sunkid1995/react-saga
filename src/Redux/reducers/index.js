@@ -1,3 +1,4 @@
 import counterReducer from './counterReducer';
+import moviesReducer from './moviesReducer';
 
-export { counterReducer };
+export { counterReducer, moviesReducer };
