@@ -17,6 +17,9 @@ function moviesReducer(state = INITIAL_STATE, action) {
     case MOVIES.GET_MOVIES_FAILED:
       return { ...state, error: action.error }
 
+    // case MOVIES.ADD_MOVIES:
+    //   return { ...state, movies: [ ...state.movies, action.newMovie ]}
+
     default:
     return state;
   }

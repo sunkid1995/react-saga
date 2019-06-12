@@ -15,6 +15,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     getMovies: params => dispatch(movies.getMovies(params)),
+    addMovie: payload => dispatch(movies.addMovie(payload)),
   }
 }
 

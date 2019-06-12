@@ -9,9 +9,15 @@ export function getMovies(sort) {
   }
 }
 
+export function addMovie(newMovie) {
+  return {
+    type: MOVIES.ADD_MOVIES,
+    newMovie,
+  }
+}
+
 // Redux saga dispatch action
 // export function getMoviesSuccess(payload) {
-//   console.log(payload, 'payload');
 //   return {
 //     type: MOVIES.GET_MOVIES_SUCCESS,
 //     movies: payload,
