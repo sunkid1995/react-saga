@@ -4,7 +4,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
 // Reducers
-import { counterReducer } from '../reducers'
+import { counterReducer, peopleReducer } from '../reducers'
 
 // Create saga middleware
 const sagaMiddleware = createSagaMiddleware();
@@ -12,6 +12,7 @@ const sagaMiddleware = createSagaMiddleware();
 // CombineReducers
 const allReducer = combineReducers({
   counterReducer,
+  peopleReducer,
 });
 
 // Create store & apply saga middleware

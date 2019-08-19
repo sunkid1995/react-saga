@@ -1,12 +1,14 @@
-import { all } from 'redux-saga/effects';
+import { all, fork } from 'redux-saga/effects';
 
 // saga
-import { watchIncrement, watchDecrement } from './CounterSagas';
+import { watchIncrement, watchDecrement } from './CounterSaga';
+import { watchActionGetPeople } from './PeopleSaga';
 
 export default function* rootSaga() {
-
+  // fork none-blocking
   yield all([
-    watchIncrement(),
-    watchDecrement(),
+    fork(watchIncrement),
+    fork(watchDecrement),
+    fork(watchActionGetPeople)
   ]);
 }

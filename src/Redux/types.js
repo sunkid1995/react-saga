@@ -2,3 +2,9 @@ export const COUNTER = {
   DECREMENT: 'counter/DECREMENT',
   INCREMENT: 'counter/INCREMENT'
 }
+
+export const PEOPLE = {
+  GET_PEOPLE: 'people/GET_PEOPLE',
+  GET_PEOPLE_SUCCESS: 'people/GET_PEOPLE_SUCCESS',
+  GET_PEOPLE_FAILED: 'people/GET_PEOPLE_FAILED',
+}
