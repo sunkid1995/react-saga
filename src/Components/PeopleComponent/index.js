@@ -7,10 +7,16 @@ class PeopleComponent extends React.Component {
   constructor(props) {
     super(props);
     this.getPeoPle = props.getPeoPle.bind(this);
+    this.filterPeople = props.filterPeople.bind(this);
   }
 
   componentDidMount() {
     this.getPeoPle();
+  }
+
+
+  handleFilter = event => {
+    this.filterPeople(event.target.value);
   }
 
   render () {
@@ -18,6 +24,10 @@ class PeopleComponent extends React.Component {
 
     return (
       <React.Fragment>
+        <input
+          placeholder="Tìm kiếm từ khoá"
+          onChange={this.handleFilter}
+        />
         {allPeople &&
           allPeople.map((item, index) => {
             return (

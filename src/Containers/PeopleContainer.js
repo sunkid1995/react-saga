@@ -13,6 +13,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     getPeoPle: () => dispatch(people.getPeoPle()),
+    filterPeople: key => dispatch(people.filterPeople(key)),
   }
 }
 

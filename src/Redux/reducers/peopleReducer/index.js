@@ -10,6 +10,13 @@ function peopleReducer(state = INITIAL_STATE, action) {
     case PEOPLE.GET_PEOPLE_SUCCESS: {
       return { ...state, allPeople: [...action.payload] }
     }
+
+    case PEOPLE.FILTER_PEOPLE_SUCCESS: {
+      return {
+        ...state,
+        allPeople: action.filterData,
+      }
+    }
     default:
       return state;
   }
